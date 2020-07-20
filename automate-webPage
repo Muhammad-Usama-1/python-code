@@ -1,0 +1,20 @@
+h = """
+<html>
+<head>
+</head>
+<body>
+<table>
+</html>
+"""
+with open("D:\\readfile\\webpage.html","w") as page:
+    page.write(h)
+    with open("D:\\readfile\\data1.csv","r") as y:
+        content = y.readlines()
+        for i in content[1:]:
+            b = i.split(",")
+            xx =int(b[0])
+            yy = int(b[1])
+            print(xx,yy)
+            page.write("<tr><td>{}</td><td>{}</td></tr>".format(xx,yy))
+            print(end="")
+    page.write("</table></body></html>")
